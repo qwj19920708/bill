@@ -19,7 +19,7 @@ const menus = computed(() => {
   });
 });
 
-const handleSelect = (val) => {
+const handleSelect = (val: string) => {
   activeIndex.value = val;
 };
 </script>

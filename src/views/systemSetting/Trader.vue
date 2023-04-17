@@ -65,27 +65,26 @@ const countyOptions = computed(() => {
 watch(
   () => provinceOptions,
   (newVal) => {
-    data.province = newVal.value[0].value;
+    data.province = newVal.value ? newVal.value[0].value : "";
   },
-  { deep: true, immediate: true }
+  { immediate: true, deep: true }
 );
 
 watch(
   () => cityOptions,
   (newVal) => {
-    console.log(newVal.value);
-    data.city = newVal.value[0].value;
+    data.city = newVal.value ? newVal.value[0].value : "";
   },
-  { deep: true, immediate: true }
+  { immediate: true, deep: true }
 );
 
 watch(
   () => countyOptions,
   (newVal) => {
-    console.log(newVal.value);
-    data.county = newVal.value[0].value;
+    data.county =
+      newVal.value && newVal.value.length ? newVal.value[0].value : "";
   },
-  { deep: true, immediate: true }
+  { immediate: true, deep: true }
 );
 </script>
 
